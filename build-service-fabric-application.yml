@@ -1,0 +1,27 @@
+trigger:
+- none
+
+pr: none
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: sdk
+    version: '6.0.x'
+
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+
+- task: MSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    msbuildArchitecture: 'x64'
+    configuration: 'release'
+    msbuildArguments: '/p:ForcePackageTarget=true'
+    clean: true

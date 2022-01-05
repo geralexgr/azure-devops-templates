@@ -1,0 +1,23 @@
+trigger:
+- none
+
+pr: none 
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: UseDotNet@2
+  inputs:
+    packageType: sdk
+    version: '6.0.x'
+    includePreviewVersions: true
+    
+- task: DotNetCoreCLI@2
+  displayName: Building .NET project
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration debug'
+
