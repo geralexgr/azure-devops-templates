@@ -1,0 +1,27 @@
+trigger:
+- none
+
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+steps:
+
+- task: PowerShell@2
+  displayName: install cake tool
+  inputs:
+    targetType: 'inline'
+    script: 'dotnet tool install Cake.Tool --version 2.0.0 --global'
+
+- task: UseDotNet@2
+  displayName: Use .NET 6
+  inputs:
+    version: '6.0.x'
+    includePreviewVersions: true
+
+- task: PowerShell@2
+  displayName: Build step using cake
+  inputs:
+    targetType: 'inline'
+    script: 'dotnet cake'
+    workingDirectory: '$(Build.SourcesDirectory)/src/'
