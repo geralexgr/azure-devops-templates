@@ -7,6 +7,7 @@ Repository to hold various build templates for Azure DevOps automation.
 - build-service-fabric-application.yml
 - build-dotnet-cake2.yml
 - build-test-dotnet-application.yml
+- build-appservice.yml
 
 
 ## Explanation
@@ -14,6 +15,7 @@ Repository to hold various build templates for Azure DevOps automation.
 - [build-service-fabric-application.yml](https://github.com/geralexgr/azure-devops-templates/blob/main/build-service-fabric-application.yml) -> Build a Service Fabric application using msbuild tool.
 - [build-dotnet-cake2.yml](https://github.com/geralexgr/azure-devops-templates/blob/main/build-dotnet-cake2.yml) -> Build a .NET application using cake2. You should place [../resources/build.cake](https://github.com/geralexgr/azure-devops-templates/blob/main/resources/build.cake) file on your project root directory.
 - [build-dotnet-application.yml](https://github.com/geralexgr/azure-devops-templates/blob/main/build-test-dotnet-application.yml) -> Build a .NET application and run Unit tests
+- [build-appservice.yml](https://github.com/geralexgr/azure-devops-templates/blob/main/build-appservice.yml) -> Build an App Service based on .NET
 
 
 
